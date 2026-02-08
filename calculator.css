@@ -16,7 +16,7 @@
   justify-content: end;
   min-height: 24px;
 
-  padding-right: 20px !important;
+  padding-right: 5px !important;
 }
 
 .output .current-operand {
@@ -79,8 +79,18 @@
 }
 
 #multiply {
-  padding-top: 8px;
+  padding-top: 12px;
 }
+#subtract {
+  padding-bottom: 4px;
+}
+#add {
+  padding-bottom: 7px;
+}
+#equal {
+  padding-bottom: 4px;
+}
+
 #del {
   background-color: rgb(107 114 128);
   font-size: 20px;
@@ -92,9 +102,9 @@
 }
 
 body {
-  margin: 0;
+  height: 100%;
+  overflow: hidden;
   display: grid;
-  min-height: 100vh;
 }
 #calculator {
   display: grid;
@@ -159,27 +169,40 @@ body {
   height: clamp(60vh, 80vh, 800px);
 }
 
+.numbers,
+#equal,
+#del {
+  font-size: 40px;
+}
+
+#del {
+  font-size: 25px;
+}
+#all_clear {
+  font-size: 25px;
+  height: 60px;
+}
+
 /* media query for mobiles  */
 @media (max-width: 600px) {
   /* selector for all small buttons on mobile */
   .numbers,
-  #equal,
-  #del {
+  #equal {
     font-size: 22px;
     --dimension: 45px;
   }
 
   .light-gray,
   .numbers.zero {
-    font-size: 20px;
     height: 45px;
     width: 100px;
   }
-
-  #del {
-    font-size: 19px;
-  }
   #all_clear {
-    font-size: 22px;
+    height: 45px;
+  }
+  #del {
+    font-size: 15px;
+    --dimension: 45px;
+    /* the dimension sets the height and width we set in the general style, above  */
   }
 }
