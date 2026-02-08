@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="calculator.js" defer></script>
+
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body class="p-8 bg-gray-500">
+    <div id="calculator" class="">
+      <div class="output col-span-4 p-2.5 w-[96%] rounded-lg">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand"></div>
+      </div>
+
+      <div
+        class="light-gray col-span-2"
+        data-operation="all_clear"
+        data-id="all_clear"
+        id="all_clear"
+      >
+        <!-- there is no keyboard shortcut for this  -->
+        AC
+      </div>
+      <div class="" data-operation="delete" id="del" data-id="DEL">DEL</div>
+
+      <div
+        class="numbers yellow operation"
+        data-operation="divide"
+        data-id="/"
+        data-key="111"
+      >
+        ÷
+      </div>
+      <div class="numbers" data-id="7" data-key="103" data-normalkey="57">
+        7
+      </div>
+      <div class="numbers" data-id="8" data-key="104" data-normalkey="56">
+        8
+      </div>
+      <div class="numbers" data-id="9" data-key="105" data-normalkey="55">
+        9
+      </div>
+      <div
+        class="numbers yellow operation"
+        id="multiply"
+        data-operation="multiply"
+        data-id="*"
+        data-key="106"
+      >
+        *
+      </div>
+      <div class="numbers" data-id="4" data-key="100" data-normalkey="52">
+        4
+      </div>
+      <div class="numbers" data-id="5" data-key="101" data-normalkey="53">
+        5
+      </div>
+      <div class="numbers" data-id="6" data-key="102" data-normalkey="54">
+        6
+      </div>
+      <div
+        class="numbers yellow operation"
+        id="subtract"
+        data-operation="subtract"
+        data-id="-"
+        data-key="109"
+      >
+        -
+      </div>
+
+      <div class="numbers" data-id="1" data-key="97" data-normalkey="49">1</div>
+      <div class="numbers" data-id="2" data-key="98" data-normalkey="50">2</div>
+      <div class="numbers" data-id="3" data-key="99" data-normalkey="51">3</div>
+      <div
+        class="numbers yellow operation"
+        id="add"
+        data-operation="add"
+        data-id="+"
+        data-key="107"
+      >
+        +
+      </div>
+      <div
+        class="numbers col-span-2 zero"
+        data-id="0"
+        data-key="96"
+        data-normalkey="48"
+      >
+        0
+      </div>
+      <div class="numbers" data-id="." data-key="110">.</div>
+      <div class="yellow" id="equal" data-id="=">=</div>
+    </div>
+  </body>
+</html>

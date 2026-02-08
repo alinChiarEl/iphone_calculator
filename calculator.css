@@ -1,0 +1,154 @@
+.output {
+  border-radius: 20px;
+  /* padding: 0px; */
+  background-color: rgb(107 114 128);
+}
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+
+  text-align: right;
+  background-color: rgb(107 114 128);
+  color: white;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: end;
+  min-height: 36px;
+
+  padding-right: 20px !important;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+
+  text-align: right;
+  background-color: rgb(107 114 128);
+  color: white;
+  font-weight: bold;
+
+  /* display: flex; */
+  justify-content: end;
+  min-height: 60px;
+
+  padding-right: 20px !important;
+}
+
+.numbers,
+#equal,
+#del {
+  --dimension: 70px;
+  width: var(--dimension);
+  height: var(--dimension);
+  border-radius: 50%;
+  background-color: rgb(40 42 47);
+
+  color: white;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbers.yellow,
+#equal {
+  background-color: rgb(245 158 11); /* #f59e0b */
+}
+.numbers.zero {
+  width: 160px;
+  border-radius: 9990px;
+}
+
+#multiply {
+  padding-top: 8px;
+}
+#del {
+  background-color: rgb(107 114 128);
+  font-size: 20px;
+}
+
+.light-gray {
+  width: 160px;
+
+  --dimension: 70px;
+  height: var(--dimension);
+  border-radius: 9990px;
+  background-color: rgb(107 114 128);
+
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbers.light-gray {
+  background-color: rgb(209 213 219); /* #d1d5db */
+  color: black;
+}
+
+#calculator {
+  justify-items: center;
+  align-items: center;
+
+  width: 400px;
+  border-radius: 50px;
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  margin: auto;
+
+  height: 100%;
+  max-height: 100vh;
+}
+
+/* button styling  */
+.yellow:active {
+  transform: scale(0.95, 0.95);
+}
+
+.yellow:hover {
+  cursor: pointer;
+  background-color: rgb(239, 198, 128) !important;
+}
+
+.numbers:hover {
+  cursor: pointer;
+  background-color: rgb(107 114 128);
+}
+#all_clear:hover,
+#del:hover {
+  cursor: pointer;
+  background-color: rgb(154, 158, 163);
+}
+
+/* the class we add to replicate the click effect on keydown  */
+
+:root {
+  --transform-time: 0.2s;
+}
+.numbers.active {
+  transform: scale(0.9, 0.9);
+  border: 3px solid orange;
+  transition: border var(--transform-time), transform var(--transform-time);
+}
+
+#del.active,
+#all_clear.active {
+  transform: scale(0.9, 0.9);
+  border: 3px solid orange;
+  transition: border var(--transform-time), transform var(--transform-time);
+}
+
+.yellow.active_operation {
+  transform: scale(0.9, 0.9);
+  border: 5px solid gray;
+  transition: border var(--transform-time), var(--transform-time);
+}
