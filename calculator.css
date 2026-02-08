@@ -5,7 +5,7 @@
 }
 .output .previous-operand {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   text-align: right;
   background-color: rgb(107 114 128);
@@ -14,14 +14,14 @@
 
   display: flex;
   justify-content: end;
-  min-height: 36px;
+  min-height: 24px;
 
   padding-right: 20px !important;
 }
 
 .output .current-operand {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
 
   text-align: right;
   background-color: rgb(107 114 128);
@@ -30,7 +30,7 @@
 
   /* display: flex; */
   justify-content: end;
-  min-height: 60px;
+  min-height: 48px;
 
   padding-right: 20px !important;
 }
@@ -38,7 +38,8 @@
 .numbers,
 #equal,
 #del {
-  --dimension: 70px;
+  --dimension: 60px;
+
   width: var(--dimension);
   height: var(--dimension);
   border-radius: 50%;
@@ -46,6 +47,22 @@
 
   color: white;
   font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.light-gray {
+  width: 160px;
+
+  --dimension: 70px;
+  height: var(--dimension);
+  border-radius: 9990px;
+  background-color: rgb(107 114 128);
+
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
 
   display: flex;
   justify-content: center;
@@ -69,44 +86,28 @@
   font-size: 20px;
 }
 
-.light-gray {
-  width: 160px;
-
-  --dimension: 70px;
-  height: var(--dimension);
-  border-radius: 9990px;
-  background-color: rgb(107 114 128);
-
-  color: white;
-  font-weight: bold;
-  font-size: 32px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .numbers.light-gray {
   background-color: rgb(209 213 219); /* #d1d5db */
   color: black;
 }
 
+body {
+  display: grid;
+  min-height: 100vh;
+}
 #calculator {
+  display: grid;
+  margin: auto;
+
   justify-items: center;
   align-items: center;
 
-  width: 400px;
   border-radius: 50px;
   background-color: black;
 
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 20px;
-  margin: auto;
-
-  height: 100%;
-  max-height: 100vh;
 }
 
 /* button styling  */
@@ -151,4 +152,24 @@
   transform: scale(0.9, 0.9);
   border: 5px solid gray;
   transition: border var(--transform-time), var(--transform-time);
+}
+
+#calculator {
+  height: clamp(60vh, 80vh, 800px);
+}
+
+/* media query for mobiles  */
+@media (max-width: 600px) {
+  /* selector for all small buttons on mobile */
+  .numbers,
+  #equal,
+  #del {
+    --dimension: 45px;
+  }
+
+  .light-gray,
+  .numbers.zero {
+    height: 45px;
+    width: 100px;
+  }
 }
