@@ -38,8 +38,6 @@
 .numbers,
 #equal,
 #del {
-  --dimension: 60px;
-
   width: var(--dimension);
   height: var(--dimension);
   border-radius: 50%;
@@ -73,21 +71,23 @@
 #equal {
   background-color: rgb(245 158 11); /* #f59e0b */
 }
-.numbers.zero {
-  width: 160px;
+.numbers#zero {
   border-radius: 9990px;
 }
 
-#multiply {
-}
+/* yellow styles only for desktop  */
 #subtract {
-  padding-bottom: 4px;
+  padding-bottom: 14px;
+  font-size: 60px;
 }
 #add {
   padding-bottom: 7px;
 }
 #equal {
   padding-bottom: 4px;
+}
+#divide {
+  padding-bottom: 6px;
 }
 
 #del {
@@ -121,6 +121,10 @@ body {
 }
 
 /* button styling  */
+.numbers#zero {
+  height: 60px;
+  width: 160px;
+}
 .yellow:active {
   transform: scale(0.95, 0.95);
 }
@@ -142,9 +146,6 @@ body {
 
 /* the class we add to replicate the click effect on keydown  */
 
-:root {
-  --transform-time: 0.2s;
-}
 .numbers.active {
   transform: scale(0.9, 0.9);
   border: 3px solid orange;
@@ -183,25 +184,54 @@ body {
 }
 
 /* media query for mobiles  */
+:root {
+  /* //desktop dimension  */
+  --dimension: 60px;
+  --transform-time: 0.2s;
+
+  --mobile-dimension: 65px;
+}
+
 @media (max-width: 600px) {
   /* selector for all small buttons on mobile */
   .numbers,
   #equal {
-    font-size: 22px;
-    --dimension: 45px;
+    font-size: 28px;
+
+    height: var(--mobile-dimension);
+    width: var(--mobile-dimension);
   }
 
-  .light-gray,
-  .numbers.zero {
-    height: 45px;
-    width: 100px;
+  .numbers#zero {
+    height: var(--mobile-dimension);
+    width: calc(var(--mobile-dimension) * 2 + 5px);
   }
   #all_clear {
-    height: 45px;
+    height: var(--mobile-dimension);
+    /* width: 140px; */
+    width: calc(var(--mobile-dimension) * 2 + 5px);
   }
   #del {
-    font-size: 15px;
-    --dimension: 45px;
+    font-size: 22px;
+    height: var(--mobile-dimension);
+    width: var(--mobile-dimension);
     /* the dimension sets the height and width we set in the general style, above  */
   }
+
+  #calculator {
+    height: clamp(60vh, 95vh, 800px);
+    display: grid;
+    margin: 5% 5% 5% 5%;
+    justify-items: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: black;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 20px;
+  }
+}
+
+/* No hover (most phones) */
+@media (hover: none) {
 }
