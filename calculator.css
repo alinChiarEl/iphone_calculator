@@ -195,13 +195,13 @@ body {
 @media (max-width: 600px) {
   /* selector for all small buttons on mobile */
   #subtract {
-    padding-top: 5px;
+    padding-top: 8px;
   }
   #divide {
-    padding-top: 3px;
+    padding-top: 6px;
   }
   #add {
-    padding-top: 3px;
+    padding-top: 6px;
   }
   .numbers,
   #equal {
@@ -213,12 +213,12 @@ body {
 
   .numbers#zero {
     height: var(--mobile-dimension);
-    width: calc(var(--mobile-dimension) * 2 + 5px);
+    width: calc(var(--mobile-dimension) * 2 + 10px);
   }
   #all_clear {
     height: var(--mobile-dimension);
     /* width: 140px; */
-    width: calc(var(--mobile-dimension) * 2 + 5px);
+    width: calc(var(--mobile-dimension) * 2 + 10px);
   }
   #del {
     font-size: 22px;
