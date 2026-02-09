@@ -194,6 +194,15 @@ body {
 
 @media (max-width: 600px) {
   /* selector for all small buttons on mobile */
+  #subtract {
+    padding-top: 5px;
+  }
+  #divide {
+    padding-top: 3px;
+  }
+  #add {
+    padding-top: 3px;
+  }
   .numbers,
   #equal {
     font-size: 28px;
@@ -219,7 +228,7 @@ body {
   }
 
   #calculator {
-    height: clamp(60vh, 95vh, 800px);
+    height: clamp(60vh, 85vh, 800px);
     display: grid;
     margin: 5% 5% 5% 5%;
     justify-items: center;
@@ -227,7 +236,8 @@ body {
     border-radius: 50px;
     background-color: black;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    column-gap: 5px;
+
     padding: 20px;
   }
 }
